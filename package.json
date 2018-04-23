@@ -1,0 +1,15 @@
+{
+  "name": "finess",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "byline": "^5.0.0",
+    "iconv-lite": "^0.4.21"
+  }
+}
