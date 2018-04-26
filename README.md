@@ -16,6 +16,5 @@ node build-real-csv.js
 The output is the file `etablissements_geolocalises_20180129.csv`
 
 ## TODO
- * handle projections for DOM TOM, see the download page for more details
  * Reorganize this repo
  * Find what this last column is
