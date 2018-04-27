@@ -19,7 +19,7 @@ const structureetHeader = [
   'Complément de distribution', 'Numéro de voie', 'Type de voie', 'Libellé de voie', 'Complément de voie', 'Lieu-dit / BP',
   'Code Commune', 'Département', 'Libellé département', 'Ligne d’acheminement (CodePostal+Lib commune)', 'Téléphone', 'Télécopie',
   'Catégorie d’établissement', 'Libelle catégorie d’établissement', 'Catégorie d’agrégat d’établissement', 'Libellé catégorie d’agrégat d’établissement',
-   'Numéro de SIRET', 'Code APE', 'Code MFT', 'Libelle MFT', 'Code SPH', 'Libelle SPH', 'Date d’ouverture', 'Date d’autorisation', 'Date de mise à jour sur la structure', 'Champ inconnu']
+   'Numéro de SIRET', 'Code APE', 'Code MFT', 'Libelle MFT', 'Code SPH', 'Libelle SPH', 'Date d’ouverture', 'Date d’autorisation', 'Date de mise à jour sur la structure', 'code UAI (RNE)']
 const structureetFilter = new Transform({
   objectMode: true,
   transform(item, encoding, callback) {

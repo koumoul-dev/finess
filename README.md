@@ -17,4 +17,3 @@ The output is the file `etablissements_geolocalises_20180129.csv`
 
 ## TODO
  * Reorganize this repo
- * Find what this last column is

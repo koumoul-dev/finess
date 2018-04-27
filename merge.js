@@ -30,7 +30,7 @@ const headers = ['Numéro FINESS ET', 'Numéro FINESS EJ', 'Raison sociale', 'Ra
 'Code Commune', 'Département', 'Libellé département', 'Ligne d’acheminement (CodePostal+Lib commune)', 'Téléphone', 'Télécopie',
 'Catégorie d’établissement', 'Libelle catégorie d’établissement', 'Catégorie d’agrégat d’établissement', 'Libellé catégorie d’agrégat d’établissement',
  'Numéro de SIRET', 'Code APE', 'Code MFT', 'Libelle MFT', 'Code SPH', 'Libelle SPH', 'Date d’ouverture', 'Date d’autorisation', 'Date de mise à jour sur la structure',
- 'Champ inconnu', 'Longitude', 'Latitude', 'Source des coordonnées', 'Date de mise à jour des coordonnées']
+ 'code UAI (RNE)', 'Longitude', 'Latitude', 'Source des coordonnées', 'Date de mise à jour des coordonnées']
 const join = require('./join')
 
 module.exports = async () => {
