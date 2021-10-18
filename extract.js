@@ -10,7 +10,11 @@ const decode = iconv.decodeStream('iso-8859-1')
 const split = new Transform({
   objectMode: true,
   transform(item, encoding, callback) {
-    callback(null, item.split(';'))
+    callback(null, item.split(';').map(l => {
+      const s = l.replace(/\"\"\"\"/g, '""')
+      // if (s.charAt(0) === '"' && s.charAt(s.length - 1) === '"') return s.slice(1, -1)
+      return s
+    }))
   }
 })
 
@@ -42,11 +46,11 @@ const join = require('./join')
 
 module.exports = async () => {
   console.log('Extracting etablissements and geolocation files')
-  const readFile = fs.createReadStream(path.join(__dirname, 'etalab_cs1100507_stock_20180129-0428.csv'))
+  const readFile = fs.createReadStream(path.join(__dirname, 'etalab-cs1100507-stock-20210913-0412.csv'))
   const decodeInput = readFile.pipe(decode).pipe(byline()).pipe(split)
 
-  const out1 = fs.createWriteStream(path.join(__dirname, 'structureet_20180129.csv'))
-  const out2 = fs.createWriteStream(path.join(__dirname, 'geolocalisation_20180129.csv'))
+  const out1 = fs.createWriteStream(path.join(__dirname, 'structureet_20210913.csv'))
+  const out2 = fs.createWriteStream(path.join(__dirname, 'geolocalisation_20210913.csv'))
   decodeInput.pipe(structureetFilter).pipe(join(structureetHeader)).pipe(out1)
   decodeInput.pipe(geolocalisationFilter).pipe(join(geolocalisationHeader)).pipe(out2)
 

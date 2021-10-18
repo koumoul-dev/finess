@@ -1,5 +1,2 @@
 node_modules/
-etablissements_geolocalises_20180129.csv
-etalab_cs1100507_stock_20180129-0428.csv
-geolocalisation_20180129.csv
-structureet_20180129.csv
+*.csv
