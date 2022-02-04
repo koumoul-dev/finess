@@ -46,11 +46,11 @@ const join = require('./join')
 
 module.exports = async () => {
   console.log('Extracting etablissements and geolocation files')
-  const readFile = fs.createReadStream(path.join(__dirname, 'etalab-cs1100507-stock-20210913-0412.csv'))
+  const readFile = fs.createReadStream(path.join(__dirname, 'etalab-cs1100507-stock-20220110-0416.csv'))
   const decodeInput = readFile.pipe(decode).pipe(byline()).pipe(split)
 
-  const out1 = fs.createWriteStream(path.join(__dirname, 'structureet_20210913.csv'))
-  const out2 = fs.createWriteStream(path.join(__dirname, 'geolocalisation_20210913.csv'))
+  const out1 = fs.createWriteStream(path.join(__dirname, 'structureet_20220110.csv'))
+  const out2 = fs.createWriteStream(path.join(__dirname, 'geolocalisation_20220110.csv'))
   decodeInput.pipe(structureetFilter).pipe(join(structureetHeader)).pipe(out1)
   decodeInput.pipe(geolocalisationFilter).pipe(join(geolocalisationHeader)).pipe(out2)
 

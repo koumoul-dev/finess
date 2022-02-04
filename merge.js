@@ -37,12 +37,12 @@ const join = require('./join')
 
 module.exports = async () => {
   console.log('Merging etablissements and geolocation files')
-  const geolocalisations = parse(fs.readFileSync(path.join(__dirname, 'geolocalisation_20210913.csv'), 'utf-8')) //.split(endOfLine).map(l => l.split(','))
+  const geolocalisations = parse(fs.readFileSync(path.join(__dirname, 'geolocalisation_20220110.csv'), 'utf-8')) //.split(endOfLine).map(l => l.split(','))
   geolocalisations.shift()
   const geolocDict = Object.assign({}, ...geolocalisations.map(l => ({[l[0]] : l.slice(1)})))
 
-  const etablissements = fs.createReadStream(path.join(__dirname, 'structureet_20210913.csv'), 'utf-8')
-  const out = fs.createWriteStream(path.join(__dirname, 'etablissements_geolocalises_20210913.csv'))
+  const etablissements = fs.createReadStream(path.join(__dirname, 'structureet_20220110.csv'), 'utf-8')
+  const out = fs.createWriteStream(path.join(__dirname, 'etablissements_geolocalises_20220110.csv'))
   let removeHeader = true
   etablissements.pipe(csv.parse()).pipe(new Transform({
     objectMode: true,
